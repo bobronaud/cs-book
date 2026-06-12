@@ -1,0 +1,151 @@
+@use '@/styles/variables' as *;
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: 6px;
+  color: $color-text-muted;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    color: $color-accent;
+    border-color: $color-accent;
+  }
+
+  &.active {
+    background-color: $color-accent-fill;
+    border-color: $color-accent;
+    color: $color-accent;
+  }
+
+  &.colorSmoke.active {
+    background-color: #6b7280;
+    border-color: #6b7280;
+    color: #fff;
+  }
+
+  &.colorMolotov.active {
+    background-color: #f0a500;
+    border-color: #f0a500;
+    color: #0f0f13;
+  }
+
+  &.colorFlash.active {
+    background-color: #e8e8f0;
+    border-color: #e8e8f0;
+    color: #0f0f13;
+  }
+}
+
+.arrow {
+  font-size: 11px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+  display: inline-block;
+
+  &.arrowOpen {
+    transform: rotate(180deg);
+  }
+}
+
+.mapWrapper {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 140px;
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 10;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.dropItem {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  color: $color-text-muted;
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease;
+
+  &:hover {
+    color: $color-accent;
+    background-color: rgba(255, 85, 0, 0.08);
+  }
+
+  &.dropItemActive {
+    color: $color-accent;
+    font-weight: 600;
+  }
+}
+
+.toggler {
+  display: flex;
+  margin-left: auto;
+  border: 1px solid $color-border;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.togglerBtn {
+  padding: 7px 16px;
+  background-color: $color-surface;
+  border: none;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: $color-text-muted;
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    color: $color-text;
+  }
+
+  &.togglerActiveT {
+    background-color: #e05252;
+    color: #fff;
+    cursor: default;
+  }
+
+  &.togglerActiveCT {
+    background-color: #4a90d9;
+    color: #fff;
+    cursor: default;
+  }
+}

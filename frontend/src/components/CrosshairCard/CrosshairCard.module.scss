@@ -1,0 +1,82 @@
+@use '@/styles/variables' as *;
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: 10px;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: #444444;
+  }
+}
+
+.preview {
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.codeField {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid $color-border;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border-color 0.15s;
+  cursor: pointer;
+
+  &:hover {
+    border-color: #444444;
+  }
+}
+
+.codeCopied {
+  border-color: #4ade80;
+}
+
+.codeText {
+  flex: 1;
+  padding: 8px 12px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  color: $color-text-muted;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.copyIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: $color-bg;
+  border: none;
+  border-left: 1px solid $color-border;
+  color: $color-text-muted;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+
+  &:hover {
+    color: $color-text;
+    background: #2d2d2d;
+  }
+
+  .codeCopied & {
+    color: #4ade80;
+  }
+}

@@ -1,0 +1,10 @@
+@use '@/styles/variables' as *;
+
+.page {
+  padding: 0 16px;
+}
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+}

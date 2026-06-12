@@ -1,0 +1,89 @@
+@use '@/styles/variables' as *;
+
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background-color: $color-bg;
+  border: 1px solid $color-border;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  outline: none;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: $color-text-muted;
+  }
+
+  &:focus-visible {
+    border-color: $color-accent;
+  }
+}
+
+.triggerOpen {
+  border-color: $color-accent;
+}
+
+.triggerValue {
+  color: $color-text;
+}
+
+.triggerPlaceholder {
+  color: $color-text-muted;
+}
+
+.arrow {
+  flex-shrink: 0;
+  color: $color-text-muted;
+  transition: transform 0.2s ease;
+}
+
+.arrowOpen {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: 8px;
+  padding: 4px;
+  list-style: none;
+  margin: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.option {
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  color: $color-text;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+}
+
+.optionSelected {
+  color: $color-accent;
+  background-color: $color-accent-fill;
+}

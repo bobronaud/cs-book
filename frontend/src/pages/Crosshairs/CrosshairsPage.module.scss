@@ -1,0 +1,14 @@
+@use '@/styles/variables' as *;
+
+.page {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 500px);
+  justify-content: center;
+  gap: 16px;
+}

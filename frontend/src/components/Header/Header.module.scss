@@ -1,0 +1,64 @@
+@use '@/styles/variables' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: $color-surface;
+  border-bottom: 1px solid $color-border;
+  height: $header-height;
+}
+
+.inner {
+  max-width: $container-width;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.link {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: $color-text-muted;
+  transition: color 0.2s ease;
+  position: relative;
+  padding-bottom: 2px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $color-accent;
+    transition: width 0.2s ease;
+  }
+
+  &:hover {
+    color: $color-text;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.active {
+  color: $color-accent;
+
+  &::after {
+    width: 100%;
+  }
+}
