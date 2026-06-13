@@ -1,0 +1,14 @@
+{
+  "code": "CSGO-Jfeqc-bhYBw-BxJjk-LZSrx-aQSFE",
+  "params": {
+    "size": 5,
+    "gap": 5,
+    "thickness": 3,
+    "dot": false,
+    "tStyle": false,
+    "color": "#00ff7f",
+    "outline": false,
+    "outlineThickness": 1,
+    "alpha": 255
+  }
+}

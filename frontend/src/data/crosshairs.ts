@@ -1,28 +1,36 @@
-export interface CrosshairItem {
+export interface CrosshairParams {
+  size: number
+  gap: number
+  thickness: number
+  dot: boolean
+  tStyle: boolean
+  color: string
+  outline: boolean
+  outlineThickness: number
+  alpha: number
+}
+
+export interface Crosshair {
   id: string
   code: string
-  image: string
+  params: CrosshairParams
 }
 
-interface CrosshairMeta {
+interface CrosshairFile {
   code: string
+  params: CrosshairParams
 }
 
-const metaModules = import.meta.glob('./crosshairs/*/meta.json', { eager: true })
-const imageModules = import.meta.glob<string>(
-  './crosshairs/*/*.{jpg,jpeg,png,webp}',
-  { eager: true, query: '?url', import: 'default' }
+const modules = import.meta.glob<{ default: CrosshairFile }>(
+  './crosshairs/*.json',
+  { eager: true }
 )
 
-export const crosshairs: CrosshairItem[] = Object.entries(metaModules).map(([path, mod]) => {
-  const id = path.match(/\.\/crosshairs\/(.+)\/meta\.json/)?.[1] ?? ''
-  const meta = (mod as { default: CrosshairMeta }).default
-  const imageEntry = Object.entries(imageModules).find(([imgPath]) =>
-    imgPath.startsWith(`./crosshairs/${id}/`)
-  )
+export const crosshairs: Crosshair[] = Object.entries(modules).map(([path, mod]) => {
+  const id = path.match(/\.\/crosshairs\/(.+)\.json/)?.[1] ?? ''
   return {
     id,
-    code: meta.code,
-    image: imageEntry ? imageEntry[1] : '',
+    code: mod.default.code,
+    params: mod.default.params,
   }
 })

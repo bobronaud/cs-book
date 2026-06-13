@@ -1,0 +1,14 @@
+{
+  "code": "CSGO-q9b4S-LaMNa-EEWPU-BPAcD-B6LsE",
+  "params": {
+    "size": 1,
+    "gap": 0,
+    "thickness": 3,
+    "dot": true,
+    "tStyle": false,
+    "color": "#ffffff",
+    "outline": true,
+    "outlineThickness": 2,
+    "alpha": 255
+  }
+}

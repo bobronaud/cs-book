@@ -17,25 +17,9 @@
 
 .preview {
   flex-shrink: 0;
-  width: 100px;
-  height: 100px;
   border-radius: 6px;
   overflow: hidden;
-  background-color: $color-bg;
   line-height: 0;
-}
-
-.image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.imagePlaceholder {
-  width: 100%;
-  height: 100%;
-  background-color: $color-bg;
 }
 
 .info {
