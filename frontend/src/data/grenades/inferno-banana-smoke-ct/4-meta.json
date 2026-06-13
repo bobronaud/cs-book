@@ -1,6 +1,6 @@
 {
   "description": "С двух кнопок, встать вплотную к стене",
-  "side": "CT",
+  "side": "T",
   "type": "smoke",
   "map": "Inferno"
 }

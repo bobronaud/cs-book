@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { GrenadeLineup } from '@/data/grenades'
+import ImageModal from '@/components/ImageModal/ImageModal'
 import styles from './GrenadeCard.module.scss'
 
 const SLIDES = [
@@ -26,6 +27,7 @@ interface Props {
 
 export default function GrenadeCard({ lineup }: Props) {
   const [slide, setSlide] = useState(2)
+  const [modalOpen, setModalOpen] = useState(false)
 
   const currentImage = lineup.images[SLIDES[slide].key]
 
@@ -33,11 +35,23 @@ export default function GrenadeCard({ lineup }: Props) {
     <div className={styles.card}>
       <div className={styles.imageWrapper}>
         {currentImage ? (
-          <img src={currentImage} alt={SLIDES[slide].label} className={styles.image} />
+          <img
+            src={currentImage}
+            alt={SLIDES[slide].label}
+            className={styles.image}
+            onClick={() => setModalOpen(true)}
+          />
         ) : (
           <div className={styles.imagePlaceholder} />
         )}
       </div>
+      {modalOpen && (
+        <ImageModal
+          src={currentImage}
+          alt={SLIDES[slide].label}
+          onClose={() => setModalOpen(false)}
+        />
+      )}
       <div className={styles.tabs}>
         {SLIDES.map((s, i) => (
           <button
