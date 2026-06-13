@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import type { Crosshair } from '@/data/crosshairs'
-import CrosshairSVG from '@/components/CrosshairSVG/CrosshairSVG'
+import type { CrosshairItem } from '@/data/crosshairs'
 import styles from './CrosshairCard.module.scss'
 
 interface Props {
-  crosshair: Crosshair
+  crosshair: CrosshairItem
 }
 
 export default function CrosshairCard({ crosshair }: Props) {
@@ -20,7 +19,11 @@ export default function CrosshairCard({ crosshair }: Props) {
   return (
     <div className={styles.card}>
       <div className={styles.preview}>
-        <CrosshairSVG params={crosshair.params} svgSize={100} />
+        {crosshair.image ? (
+          <img src={crosshair.image} alt="crosshair" className={styles.image} />
+        ) : (
+          <div className={styles.imagePlaceholder} />
+        )}
       </div>
       <div className={styles.info}>
         <div className={[styles.codeField, copied ? styles.codeCopied : ''].join(' ')} onClick={handleCopy} title="Скопировать">

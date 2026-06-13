@@ -8,3 +8,17 @@
   max-width: $container-width;
   margin: 0 auto;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-bottom: 32px;
+}
+
+.empty {
+  padding: 48px 0;
+  text-align: center;
+  color: $color-text-muted;
+  font-size: 15px;
+}
