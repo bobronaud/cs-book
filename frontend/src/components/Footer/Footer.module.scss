@@ -1,0 +1,39 @@
+@use '@/styles/variables' as *;
+
+.footer {
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 16px 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.copy {
+  font-size: 12px;
+  color: $color-text-muted;
+}
+
+.links {
+  position: absolute;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: $color-text-muted;
+  text-decoration: none;
+  transition: color 0.15s;
+
+  &:hover {
+    color: $color-accent;
+  }
+}

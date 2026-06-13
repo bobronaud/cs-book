@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
 import GrenadesPage from '@/pages/Grenades/GrenadesPage';
 import CrosshairsPage from '@/pages/Crosshairs/CrosshairsPage';
 // import AdminPage from '@/pages/Admin/AdminPage'
@@ -24,6 +25,7 @@ export default function App() {
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 }

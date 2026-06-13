@@ -24,7 +24,6 @@ export default function ImageModal({ src, alt, onClose }: Props) {
         src={src}
         alt={alt ?? ''}
         className={styles.image}
-        onMouseDown={e => e.stopPropagation()}
       />
     </div>,
     document.body
