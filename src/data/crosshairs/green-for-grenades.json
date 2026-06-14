@@ -1,0 +1,14 @@
+{
+  "code": "CSGO-yVdTC-VaiCK-hxWwZ-HSrJR-26sKG",
+  "params": {
+    "size": 10,
+    "gap": 3,
+    "thickness": 3,
+    "dot": false,
+    "tStyle": false,
+    "color": "#00ff7f",
+    "outline": true,
+    "outlineThickness": 2,
+    "alpha": 255
+  }
+}

@@ -1,48 +1,49 @@
-export type GrenadeType = 'smoke' | 'molotov' | 'flash'
-export type Side = 'T' | 'CT'
+export type GrenadeType = 'smoke' | 'molotov' | 'flash';
+export type Side = 'T' | 'CT';
 
 export interface GrenadeLineup {
-  id: string
-  description: string
-  side: Side
-  type: GrenadeType
-  map: string
+  id: string;
+  description: string;
+  side: Side;
+  type: GrenadeType;
+  map: string;
   images: {
-    stand: string
-    aim: string
-    result: string
-  }
+    stand: string;
+    aim: string;
+    result: string;
+  };
 }
 
 interface GrenadeMeta {
-  description: string
-  side: Side
-  type: GrenadeType
-  map: string
+  description: string;
+  side: Side;
+  type: GrenadeType;
+  map: string;
 }
 
-const metaModules = import.meta.glob('./grenades/*/4-meta.json', { eager: true })
-const imageModules = import.meta.glob<string>(
-  './grenades/*/*.{jpg,jpeg,png,webp}',
-  { eager: true, query: '?url', import: 'default' }
-)
+const metaModules = import.meta.glob('./grenades/*/meta.json', { eager: true });
+const imageModules = import.meta.glob<string>('./grenades/*/*.{jpg,jpeg,png,webp}', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+});
 
 const IMAGE_PREFIX: Record<'stand' | 'aim' | 'result', string> = {
-  stand: '1-stand',
-  aim: '2-aim',
-  result: '3-result',
-}
+  stand: '1',
+  aim: '2',
+  result: '3',
+};
 
 function findImage(lineupId: string, name: 'stand' | 'aim' | 'result'): string {
-  const prefix = IMAGE_PREFIX[name]
-  const pattern = new RegExp(`^\\./grenades/${lineupId}/${prefix}\\.(jpg|jpeg|png|webp)$`)
-  const entry = Object.entries(imageModules).find(([path]) => pattern.test(path))
-  return entry ? entry[1] : ''
+  const prefix = IMAGE_PREFIX[name];
+  const pattern = new RegExp(`^\\./grenades/${lineupId}/${prefix}\\.(jpg|jpeg|png|webp)$`);
+  const entry = Object.entries(imageModules).find(([path]) => pattern.test(path));
+  return entry ? entry[1] : '';
 }
 
 export const grenadeLineups: GrenadeLineup[] = Object.entries(metaModules).map(([path, mod]) => {
-  const id = path.match(/\.\/grenades\/(.+)\/4-meta\.json/)?.[1] ?? ''
-  const meta = (mod as { default: GrenadeMeta }).default
+  const id = path.match(/\.\/grenades\/(.+)\/meta\.json/)?.[1] ?? '';
+  const meta = (mod as { default: GrenadeMeta }).default;
   return {
     id,
     description: meta.description,
@@ -54,5 +55,5 @@ export const grenadeLineups: GrenadeLineup[] = Object.entries(metaModules).map((
       aim: findImage(id, 'aim'),
       result: findImage(id, 'result'),
     },
-  }
-})
+  };
+});
