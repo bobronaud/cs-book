@@ -8,7 +8,7 @@ CS Book is a CS2 reference app — a single-page React frontend for browsing gre
 
 ## Commands
 
-All commands run from `frontend/`:
+All commands run from the repo root:
 
 ```bash
 npm run dev      # start dev server (Vite)
