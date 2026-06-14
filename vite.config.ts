@@ -1,12 +1,13 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { resolve } from 'path'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { resolve } from 'path';
 
 export default defineConfig({
+  base: '/cs-book/',
   plugins: [react()],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
     },
   },
-})
+});
