@@ -3,6 +3,7 @@
 .bar {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 12px;
   padding: 16px 0;
 }
@@ -10,6 +11,7 @@
 .group {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
@@ -29,6 +31,11 @@
   text-transform: uppercase;
   cursor: pointer;
   transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+
+  @media (max-width: $bp-mobile) {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
 
   &:hover {
     color: $color-accent;
@@ -119,6 +126,10 @@
   border: 1px solid $color-border;
   border-radius: 20px;
   overflow: hidden;
+
+  @media (max-width: $bp-mobile) {
+    margin-left: 0;
+  }
 }
 
 .togglerBtn {

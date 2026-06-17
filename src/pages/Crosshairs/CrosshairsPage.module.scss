@@ -4,11 +4,19 @@
   max-width: $container-width;
   margin: 0 auto;
   padding: 32px 24px;
+
+  @media (max-width: $bp-mobile) {
+    padding: 20px 12px;
+  }
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 500px);
+  grid-template-columns: minmax(0, 500px);
   justify-content: center;
   gap: 16px;
+
+  @media (min-width: $bp-desktop) {
+    grid-template-columns: repeat(2, minmax(0, 500px));
+  }
 }

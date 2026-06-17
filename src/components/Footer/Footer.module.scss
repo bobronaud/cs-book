@@ -9,6 +9,11 @@
   align-items: center;
   justify-content: center;
   position: relative;
+
+  @media (max-width: $bp-mobile) {
+    flex-direction: column;
+    gap: 12px;
+  }
 }
 
 .copy {
@@ -22,6 +27,11 @@
   display: flex;
   align-items: center;
   gap: 16px;
+
+  @media (max-width: $bp-mobile) {
+    position: static;
+    right: auto;
+  }
 }
 
 .link {

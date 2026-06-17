@@ -2,6 +2,10 @@
 
 .page {
   padding: 0 16px;
+
+  @media (max-width: $bp-mobile) {
+    padding: 0 12px;
+  }
 }
 
 .container {
@@ -11,9 +15,13 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 20px;
   padding-bottom: 32px;
+
+  @media (min-width: $bp-desktop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .empty {

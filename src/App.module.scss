@@ -12,4 +12,8 @@
   max-width: $container-width;
   margin: 0 auto;
   padding: 10px 16px 40px;
+
+  @media (max-width: $bp-mobile) {
+    padding: 8px 10px 32px;
+  }
 }

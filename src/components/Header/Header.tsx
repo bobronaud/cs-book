@@ -4,7 +4,6 @@ import styles from './Header.module.scss'
 const navItems = [
   { to: '/grenades', label: 'Раскидки' },
   { to: '/crosshairs', label: 'Прицелы' },
-  // { to: '/admin', label: 'Админка' },
 ]
 
 export default function Header() {
