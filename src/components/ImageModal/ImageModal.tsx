@@ -24,6 +24,7 @@ export default function ImageModal({ src, alt, onClose }: Props) {
         src={src}
         alt={alt ?? ''}
         className={styles.image}
+        decoding="async"
       />
     </div>,
     document.body

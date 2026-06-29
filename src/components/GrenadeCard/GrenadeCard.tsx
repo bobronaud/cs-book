@@ -39,6 +39,8 @@ export default function GrenadeCard({ lineup }: Props) {
             src={currentImage}
             alt={SLIDES[slide].label}
             className={styles.image}
+            loading="lazy"
+            decoding="async"
             onClick={() => setModalOpen(true)}
           />
         ) : (
